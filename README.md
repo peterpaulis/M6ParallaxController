@@ -19,8 +19,7 @@ Parallax controller for a parallaxed view and a table view
 
 - In storyboard, create a view controller and set its class to MyParallaxController
 - Add a UIViewController, which will be parallaxed. Set its Storyboard ID to let's say "ParallaxedViewController"
-- Add a UITableViewController, and create a custom class for it, lets say MyTableViewController (which subclasses the UITableViewController) 
-- Inside your implementation of MyTableViewController add 
+- Add a UITableViewController, and create a custom class for it, lets say MyTableViewController (which subclasses the UITableViewController). Inside your implementation of MyTableViewController add : 
 
 ``` objective-c
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -30,7 +29,7 @@ Parallax controller for a parallaxed view and a table view
 }
 ```
 
-- Assign a StoryboardID to your MyTableViewController, let's sat "MyTableViewController"
+- Assign a StoryboardID to your MyTableViewController, let's say "MyTableViewController"
 - In my MyParallaxController add
 
 ``` objective-c
