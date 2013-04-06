@@ -19,12 +19,13 @@ Parallax controller for a parallaxed view and a table view
 - Add a UIViewController, which will be parallaxed. Set its Storyboard ID to let's say "ParallaxedViewController"
 - Add a UITableViewController, and create a custom class for it, lets say MyTableViewController (which subclasses the UITableViewController) 
 - Inside your implementation of MyTableViewController add 
-
+``` objective-c
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
     [self.parallaxController tableViewControllerDidScroll:self];
     
 }
+```
 
 - Assign a StoryboardID to your MyTableViewController, let's sat "MyTableViewController"
 - In my MyParallaxController add
@@ -45,6 +46,7 @@ Parallax controller for a parallaxed view and a table view
 @interface MyParallaxedViewController : UIViewController<M6ParallaxMasterViewControllerDelegate>
 ```
 - and than in MyParallaxController, assign it as delegate
+``` objective-c
 -(void) awakeFromNib
 {
     MyParallaxedViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ParallaxedViewController"];
@@ -54,6 +56,7 @@ Parallax controller for a parallaxed view and a table view
     
     self.delegate = vc;
 }
+```
 - and do some custom stuff, like change the Alpha (as in the sample)
 ``` objective-c
 - (void)parallaxController:(M6ParallaxController *)parallaxController willChangeHeightOfViewController:(UIViewController *)viewController fromHeight:(CGFloat)oldHeight toHeight:(CGFloat)newHeight {
