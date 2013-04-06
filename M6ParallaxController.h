@@ -2,8 +2,8 @@
 //  M6ParallaxTableViewController.h
 //  M6ParallaxTableViewController
 //
-//  Created by Peter Paulis on 5.4.2013.
-//  Copyright (c) 2013 Peter Paulis. All rights reserved.
+//  Created by Peter Paulis on 1.4.2013.
+//  Copyright (c) 2013 Min60 s.r.o. - http://min60.com. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -20,6 +20,8 @@
 @interface M6ParallaxController : UIViewController
 
 @property (nonatomic, weak) id<M6ParallaxMasterViewControllerDelegate> delegate;
+
+@property (nonatomic, assign, readonly) CGFloat parallaxedViewControllerStandartHeight;
 
 - (void)setupWithViewController:(UIViewController *)viewController height:(CGFloat)height tableViewController:(UITableViewController *)tableViewController;
 

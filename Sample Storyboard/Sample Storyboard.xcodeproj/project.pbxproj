@@ -21,8 +21,8 @@
 		7E814D95171049EB006242AA /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E814D94171049EB006242AA /* bg.jpg */; };
 		7E814D9D17104C81006242AA /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E814D9C17104C81006242AA /* MyTableViewController.m */; };
 		7E814DA017104E58006242AA /* MyParallaxedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E814D9F17104E58006242AA /* MyParallaxedViewController.m */; };
-		7E814DA11710506B006242AA /* UIViewController+M6ParallaxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E814D9A17104A1F006242AA /* UIViewController+M6ParallaxController.m */; };
-		7E814DA21710506D006242AA /* M6ParallaxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E814D9817104A17006242AA /* M6ParallaxController.m */; };
+		7E814DA71710C6D9006242AA /* UIViewController+M6ParallaxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E814DA41710C6D9006242AA /* UIViewController+M6ParallaxController.m */; };
+		7E814DA81710C6D9006242AA /* M6ParallaxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E814DA61710C6D9006242AA /* M6ParallaxController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,14 +43,14 @@
 		7E814D8C171049D1006242AA /* MyParallaxController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyParallaxController.h; sourceTree = "<group>"; };
 		7E814D8D171049D1006242AA /* MyParallaxController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyParallaxController.m; sourceTree = "<group>"; };
 		7E814D94171049EB006242AA /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
-		7E814D9717104A17006242AA /* M6ParallaxController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M6ParallaxController.h; sourceTree = "<group>"; };
-		7E814D9817104A17006242AA /* M6ParallaxController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M6ParallaxController.m; sourceTree = "<group>"; };
-		7E814D9917104A1F006242AA /* UIViewController+M6ParallaxController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+M6ParallaxController.h"; sourceTree = "<group>"; };
-		7E814D9A17104A1F006242AA /* UIViewController+M6ParallaxController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+M6ParallaxController.m"; sourceTree = "<group>"; };
 		7E814D9B17104C81006242AA /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
 		7E814D9C17104C81006242AA /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
 		7E814D9E17104E58006242AA /* MyParallaxedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyParallaxedViewController.h; sourceTree = "<group>"; };
 		7E814D9F17104E58006242AA /* MyParallaxedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyParallaxedViewController.m; sourceTree = "<group>"; };
+		7E814DA31710C6D9006242AA /* UIViewController+M6ParallaxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+M6ParallaxController.h"; path = "../../UIViewController+M6ParallaxController.h"; sourceTree = "<group>"; };
+		7E814DA41710C6D9006242AA /* UIViewController+M6ParallaxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+M6ParallaxController.m"; path = "../../UIViewController+M6ParallaxController.m"; sourceTree = "<group>"; };
+		7E814DA51710C6D9006242AA /* M6ParallaxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = M6ParallaxController.h; path = ../../M6ParallaxController.h; sourceTree = "<group>"; };
+		7E814DA61710C6D9006242AA /* M6ParallaxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = M6ParallaxController.m; path = ../../M6ParallaxController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,10 +130,10 @@
 		7E814D96171049EF006242AA /* M6ParallaxController */ = {
 			isa = PBXGroup;
 			children = (
-				7E814D9917104A1F006242AA /* UIViewController+M6ParallaxController.h */,
-				7E814D9A17104A1F006242AA /* UIViewController+M6ParallaxController.m */,
-				7E814D9717104A17006242AA /* M6ParallaxController.h */,
-				7E814D9817104A17006242AA /* M6ParallaxController.m */,
+				7E814DA31710C6D9006242AA /* UIViewController+M6ParallaxController.h */,
+				7E814DA41710C6D9006242AA /* UIViewController+M6ParallaxController.m */,
+				7E814DA51710C6D9006242AA /* M6ParallaxController.h */,
+				7E814DA61710C6D9006242AA /* M6ParallaxController.m */,
 			);
 			name = M6ParallaxController;
 			sourceTree = "<group>";
@@ -206,12 +206,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E814D7E171049D1006242AA /* main.m in Sources */,
-				7E814DA21710506D006242AA /* M6ParallaxController.m in Sources */,
 				7E814D82171049D1006242AA /* AppDelegate.m in Sources */,
-				7E814DA11710506B006242AA /* UIViewController+M6ParallaxController.m in Sources */,
 				7E814D8E171049D1006242AA /* MyParallaxController.m in Sources */,
 				7E814D9D17104C81006242AA /* MyTableViewController.m in Sources */,
 				7E814DA017104E58006242AA /* MyParallaxedViewController.m in Sources */,
+				7E814DA71710C6D9006242AA /* UIViewController+M6ParallaxController.m in Sources */,
+				7E814DA81710C6D9006242AA /* M6ParallaxController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +334,7 @@
 				7E814D93171049D1006242AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,21 +1,37 @@
 //
 //  AppDelegate.m
-//  Sample Storyboard
+//  Sample
 //
-//  Created by Peter Paulis on 1.4.2013.
-//  Copyright (c) 2013 Min60 s.r.o. - http://min60.com. All rights reserved.
+//  Created by Peter Paulis on 6.4.2013.
+//  Copyright (c) 2013 Peter Paulis. All rights reserved.
 //
 
 #import "AppDelegate.h"
+
+#import "M6ParallaxController.h"
+#import "MyParallaxedViewController.h"
+#import "MyTableViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     // Override point for customization after application launch.
+    
+    self.parallaxController = [[M6ParallaxController alloc] init];
+    MyTableViewController * mtvc = [[MyTableViewController alloc] init];
+    MyParallaxedViewController * mpvc = [[MyParallaxedViewController alloc] init];
+    [self.parallaxController setupWithViewController:mpvc height:100 tableViewController:mtvc];
+    
+    self.parallaxController.delegate = mpvc;
+    
+    self.window.rootViewController = self.parallaxController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

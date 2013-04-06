@@ -2,8 +2,8 @@
 //  UIViewController+M6Parallax.m
 //  M6ParallaxTableViewController
 //
-//  Created by Peter Paulis on 5.4.2013.
-//  Copyright (c) 2013 Peter Paulis. All rights reserved.
+//  Created by Peter Paulis on 1.4.2013.
+//  Copyright (c) 2013 Min60 s.r.o. - http://min60.com. All rights reserved.
 //
 
 #import "UIViewController+M6ParallaxController.h"
@@ -12,7 +12,7 @@
 
 @implementation UIViewController (M6ParallaxController)
 
-- (M6ParallaxController *)parallaxMasterController {
+- (M6ParallaxController *)parallaxController {
     UIViewController *iter = self.parentViewController;
     while (iter) {
         if ([iter isKindOfClass:[M6ParallaxController class]]) {
