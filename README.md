@@ -3,6 +3,10 @@ M6ParallaxController
 
 Parallax controller for a parallaxed view and a table view
 
+##Usage (Without storyboards)
+
+- see sample
+
 ##Storyboard Usage
 
 - Add M6ParallaxTableViewController.h / .m and UIViewController+M6ParallaxController.h / .m to your project
