@@ -6,31 +6,25 @@
 //  Copyright (c) 2013 Min60 s.r.o. - http://min60.com. All rights reserved.
 //
 
-#import "MyParallaxController.h"
+#import "MyMasterParallaxController.h"
 #import "MyTopViewController.h"
+#import "MyTableViewController.h"
 
-@interface MyParallaxController ()
+@interface MyMasterParallaxController ()
 
 @end
 
-@implementation MyParallaxController
+@implementation MyMasterParallaxController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-}
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void) awakeFromNib
-{
-    UIViewController * topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ParallaxedViewController"];
-    UITableViewController * tableViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyTableViewController"];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    
+    UIViewController * topViewController = [MyTopViewController new];
+    UITableViewController * tableViewController = [MyTableViewController new];
     
     [self setupWithTopViewController:topViewController height:150 tableViewController:tableViewController];
     
@@ -45,6 +39,13 @@
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Yup" message:@"You pressed" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
     
+}
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 ////////////////////////////////////////////////////////////////////////

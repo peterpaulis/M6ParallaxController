@@ -6,19 +6,21 @@
 //  Copyright (c) 2013 Min60 s.r.o. - http://min60.com. All rights reserved.
 //
 
-#import "MyParallaxedViewController.h"
+#import "MyTopViewController.h"
+#import "MyParallaxController.h"
 
-@interface MyParallaxedViewController ()
+@interface MyTopViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView * imageView;
 
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
 @property (weak, nonatomic) IBOutlet UILabel *label3;
+@property (weak, nonatomic) IBOutlet UIImageView *gradientImageView;
 
 @end
 
-@implementation MyParallaxedViewController
+@implementation MyTopViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,28 +44,35 @@
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark - Parallax Controller Delegate
+#pragma mark - Public
 ////////////////////////////////////////////////////////////////////////
 
-- (void)parallaxController:(M6ParallaxController *)parallaxController willChangeHeightOfViewController:(UIViewController *)viewController fromHeight:(CGFloat)oldHeight toHeight:(CGFloat)newHeight {
-
-    if (newHeight >= parallaxController.parallaxedViewControllerStandartHeight) {
+- (void)willChangeHeightFromHeight:(CGFloat)oldHeight toHeight:(CGFloat)newHeight {
     
+    M6ParallaxController * parallaxController = [self parallaxController];
+    
+    if (newHeight >= parallaxController.topViewControllerStandartHeight) {
+        
         [self.imageView setAlpha:1];
         [self.label1 setAlpha:1];
         [self.label2 setAlpha:1];
         [self.label3 setAlpha:1];
         
+        float r = (parallaxController.topViewControllerStandartHeight * 1.25f) / newHeight;
+        
+        [self.gradientImageView setAlpha:r*r];
+        
     } else {
-    
-        float r = newHeight / parallaxController.parallaxedViewControllerStandartHeight;
+        
+        float r = newHeight / parallaxController.topViewControllerStandartHeight;
         [self.imageView setAlpha:r];
         [self.label1 setAlpha:r];
         [self.label2 setAlpha:r*r];
         [self.label3 setAlpha:r*r*r*r];
+        [self.gradientImageView setAlpha:r*r*r*r];
         
     }
-
+    
 }
 
 @end

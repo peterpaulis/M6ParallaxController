@@ -8,12 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class M6ParallaxController;
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) M6ParallaxController * parallaxController;
 
 @end

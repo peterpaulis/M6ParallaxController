@@ -9,8 +9,7 @@
 #import "AppDelegate.h"
 
 #import "M6ParallaxController.h"
-#import "MyParallaxedViewController.h"
-#import "MyTableViewController.h"
+#import "MyMasterParallaxController.h"
 
 @implementation AppDelegate
 
@@ -20,14 +19,7 @@
     
     // Override point for customization after application launch.
     
-    self.parallaxController = [[M6ParallaxController alloc] init];
-    MyTableViewController * mtvc = [[MyTableViewController alloc] init];
-    MyParallaxedViewController * mpvc = [[MyParallaxedViewController alloc] init];
-    [self.parallaxController setupWithViewController:mpvc height:100 tableViewController:mtvc];
-    
-    self.parallaxController.delegate = mpvc;
-    
-    self.window.rootViewController = self.parallaxController;
+    self.window.rootViewController = [MyMasterParallaxController new];
     [self.window makeKeyAndVisible];
     return YES;
 }

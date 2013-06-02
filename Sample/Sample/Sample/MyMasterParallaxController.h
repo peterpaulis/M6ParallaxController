@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "M6ParallaxController.h"
 
-@interface MyParallaxController : M6ParallaxController
+@interface MyMasterParallaxController : M6ParallaxController<UIGestureRecognizerDelegate>
 
 @end

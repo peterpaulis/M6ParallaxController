@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "M6ParallaxController.h"
 
-@interface MyParallaxedViewController : UIViewController<M6ParallaxMasterViewControllerDelegate>
+@interface MyTopViewController : UIViewController
+
+- (void)willChangeHeightFromHeight:(CGFloat)oldHeight toHeight:(CGFloat)newHeight;
 
 @end

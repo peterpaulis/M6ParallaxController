@@ -10,10 +10,10 @@
 
 @interface M6ParallaxController ()
 
-@property (nonatomic, strong) UIViewController * viewController;
-@property (nonatomic, strong) UITableViewController * tableViewController;
+@property (nonatomic, strong, readwrite) UIViewController * topViewController;
+@property (nonatomic, strong, readwrite) UITableViewController * tableViewController;
 
-@property (nonatomic, assign, readwrite) CGFloat parallaxedViewControllerStandartHeight;
+@property (nonatomic, assign, readwrite) CGFloat topViewControllerStandartHeight;
 
 @end
 
@@ -33,30 +33,29 @@
 #pragma mark - Public
 ////////////////////////////////////////////////////////////////////////
 
-- (void)setupWithViewController:(UIViewController *)viewController height:(CGFloat)height tableViewController:(UITableViewController *)tableViewController {
+- (void)setupWithTopViewController:(UIViewController *)topViewController height:(CGFloat)height tableViewController:(UITableViewController *)tableViewController {
     
-    self.parallaxedViewControllerStandartHeight = height;
+    self.topViewControllerStandartHeight = height;
     
     [tableViewController.tableView setBackgroundColor:[UIColor clearColor]];
     [tableViewController.tableView setBackgroundView:nil];
-    [viewController.view setClipsToBounds:YES];
+    [topViewController.view setClipsToBounds:YES];
     [tableViewController.view setClipsToBounds:YES];
     
-    [self addChildViewController:viewController];
-    [viewController didMoveToParentViewController:self];
+    [self addChildViewController:topViewController];
+    [self.view addSubview:topViewController.view];
+    [topViewController didMoveToParentViewController:self];
     
     [self addChildViewController:tableViewController];
-    [tableViewController didMoveToParentViewController:self];
-    
-    [self.view addSubview:viewController.view];
     [self.view addSubview:tableViewController.view];
+    [tableViewController didMoveToParentViewController:self];
     
     tableViewController.tableView.frame = self.view.bounds;
     
-    viewController.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.parallaxedViewControllerStandartHeight);
-    tableViewController.tableView.contentInset = UIEdgeInsetsMake(viewController.view.frame.size.height, 0, 0, 0);
+    topViewController.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.topViewControllerStandartHeight);
+    tableViewController.tableView.contentInset = UIEdgeInsetsMake(topViewController.view.frame.size.height, 0, 0, 0);
     
-    self.viewController = viewController;
+    self.topViewController = topViewController;
     self.tableViewController = tableViewController;
     
 }
@@ -68,52 +67,58 @@
     }
 
     UITableView * tableView = self.tableViewController.tableView;
-    UIView * parallaxView = self.viewController.view;
+    UIView * parallaxView = self.topViewController.view;
     
-    float y = tableView.contentOffset.y + self.parallaxedViewControllerStandartHeight;
+    float y = tableView.contentOffset.y + self.topViewControllerStandartHeight;
     
     CGRect currentParallaxFrame = parallaxView.frame;
     
     if (y > 0) {
         
-        CGFloat newHeight = self.parallaxedViewControllerStandartHeight - y;
+        CGFloat newHeight = self.topViewControllerStandartHeight - y;
         
         [parallaxView setHidden:(newHeight <= 0)];
         
         if (!parallaxView.hidden) {
             
-            [self.delegate parallaxController:self willChangeHeightOfViewController:self.viewController fromHeight:parallaxView.frame.size.height toHeight:newHeight];
+            [self willChangeHeightOfTopViewControllerFromHeight:parallaxView.frame.size.height toHeight:newHeight];
             
             parallaxView.frame = CGRectMake(currentParallaxFrame.origin.x, currentParallaxFrame.origin.y, currentParallaxFrame.size.width, newHeight);
           
         }
-        
-        if (y >= self.parallaxedViewControllerStandartHeight) {
-            
-            tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-            
-        } else {
-            
-            tableView.contentInset = UIEdgeInsetsMake(self.parallaxedViewControllerStandartHeight - y, 0, 0, 0);
-            
-        }
+
+        //uncomment if you want to support section headers - doesnt work 100%
+//        if (y >= self.topViewControllerStandartHeight) {
+//            
+//            tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+//            
+//        } else {
+//            
+//            tableView.contentInset = UIEdgeInsetsMake(self.topViewControllerStandartHeight - y, 0, 0, 0);
+//            
+//        }
         
     } else {
         
         [parallaxView setHidden:NO];
         
-        CGFloat newHeight = self.parallaxedViewControllerStandartHeight - y;
+        CGFloat newHeight = self.topViewControllerStandartHeight - y;
         
-        [self.delegate parallaxController:self willChangeHeightOfViewController:self.viewController fromHeight:parallaxView.frame.size.height toHeight:newHeight];
+        [self willChangeHeightOfTopViewControllerFromHeight:parallaxView.frame.size.height toHeight:newHeight];
         
         parallaxView.frame = CGRectMake(currentParallaxFrame.origin.x, currentParallaxFrame.origin.y, currentParallaxFrame.size.width, newHeight);
-        
-        tableView.contentInset = UIEdgeInsetsMake(self.parallaxedViewControllerStandartHeight, 0, 0, 0);
+
+        //uncomment if you want to support section headers - doesnt work 100%
+//        tableView.contentInset = UIEdgeInsetsMake(self.topViewControllerStandartHeight, 0, 0, 0);
         
     }
     
     [tableView setShowsVerticalScrollIndicator:parallaxView.hidden];
     
+}
+
+- (void)willChangeHeightOfTopViewControllerFromHeight:(CGFloat)oldHeight toHeight:(CGFloat)newHeight {
+
 }
 
 

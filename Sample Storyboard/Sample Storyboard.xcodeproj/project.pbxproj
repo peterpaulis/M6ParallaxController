@@ -20,9 +20,11 @@
 		7E814D8E171049D1006242AA /* MyParallaxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E814D8D171049D1006242AA /* MyParallaxController.m */; };
 		7E814D95171049EB006242AA /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E814D94171049EB006242AA /* bg.jpg */; };
 		7E814D9D17104C81006242AA /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E814D9C17104C81006242AA /* MyTableViewController.m */; };
-		7E814DA017104E58006242AA /* MyParallaxedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E814D9F17104E58006242AA /* MyParallaxedViewController.m */; };
+		7E814DA017104E58006242AA /* MyTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E814D9F17104E58006242AA /* MyTopViewController.m */; };
 		7E814DA71710C6D9006242AA /* UIViewController+M6ParallaxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E814DA41710C6D9006242AA /* UIViewController+M6ParallaxController.m */; };
 		7E814DA81710C6D9006242AA /* M6ParallaxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E814DA61710C6D9006242AA /* M6ParallaxController.m */; };
+		7ED88358175B91F0005DCC81 /* gradient_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED88356175B91F0005DCC81 /* gradient_overlay@2x.png */; };
+		7ED88359175B91F0005DCC81 /* gradient-over-image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED88357175B91F0005DCC81 /* gradient-over-image@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,12 +47,14 @@
 		7E814D94171049EB006242AA /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		7E814D9B17104C81006242AA /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
 		7E814D9C17104C81006242AA /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
-		7E814D9E17104E58006242AA /* MyParallaxedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyParallaxedViewController.h; sourceTree = "<group>"; };
-		7E814D9F17104E58006242AA /* MyParallaxedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyParallaxedViewController.m; sourceTree = "<group>"; };
+		7E814D9E17104E58006242AA /* MyTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTopViewController.h; sourceTree = "<group>"; };
+		7E814D9F17104E58006242AA /* MyTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTopViewController.m; sourceTree = "<group>"; };
 		7E814DA31710C6D9006242AA /* UIViewController+M6ParallaxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+M6ParallaxController.h"; path = "../../UIViewController+M6ParallaxController.h"; sourceTree = "<group>"; };
 		7E814DA41710C6D9006242AA /* UIViewController+M6ParallaxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+M6ParallaxController.m"; path = "../../UIViewController+M6ParallaxController.m"; sourceTree = "<group>"; };
 		7E814DA51710C6D9006242AA /* M6ParallaxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = M6ParallaxController.h; path = ../../M6ParallaxController.h; sourceTree = "<group>"; };
 		7E814DA61710C6D9006242AA /* M6ParallaxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = M6ParallaxController.m; path = ../../M6ParallaxController.m; sourceTree = "<group>"; };
+		7ED88356175B91F0005DCC81 /* gradient_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient_overlay@2x.png"; sourceTree = "<group>"; };
+		7ED88357175B91F0005DCC81 /* gradient-over-image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient-over-image@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +110,8 @@
 				7E814D9C17104C81006242AA /* MyTableViewController.m */,
 				7E814D8C171049D1006242AA /* MyParallaxController.h */,
 				7E814D8D171049D1006242AA /* MyParallaxController.m */,
-				7E814D9E17104E58006242AA /* MyParallaxedViewController.h */,
-				7E814D9F17104E58006242AA /* MyParallaxedViewController.m */,
+				7E814D9E17104E58006242AA /* MyTopViewController.h */,
+				7E814D9F17104E58006242AA /* MyTopViewController.m */,
 				7E814D78171049D1006242AA /* Supporting Files */,
 			);
 			path = "Sample Storyboard";
@@ -116,6 +120,8 @@
 		7E814D78171049D1006242AA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7ED88356175B91F0005DCC81 /* gradient_overlay@2x.png */,
+				7ED88357175B91F0005DCC81 /* gradient-over-image@2x.png */,
 				7E814D79171049D1006242AA /* Sample Storyboard-Info.plist */,
 				7E814D7A171049D1006242AA /* InfoPlist.strings */,
 				7E814D7D171049D1006242AA /* main.m */,
@@ -195,6 +201,8 @@
 				7E814D88171049D1006242AA /* Default-568h@2x.png in Resources */,
 				7E814D8B171049D1006242AA /* MainStoryboard.storyboard in Resources */,
 				7E814D95171049EB006242AA /* bg.jpg in Resources */,
+				7ED88358175B91F0005DCC81 /* gradient_overlay@2x.png in Resources */,
+				7ED88359175B91F0005DCC81 /* gradient-over-image@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +217,7 @@
 				7E814D82171049D1006242AA /* AppDelegate.m in Sources */,
 				7E814D8E171049D1006242AA /* MyParallaxController.m in Sources */,
 				7E814D9D17104C81006242AA /* MyTableViewController.m in Sources */,
-				7E814DA017104E58006242AA /* MyParallaxedViewController.m in Sources */,
+				7E814DA017104E58006242AA /* MyTopViewController.m in Sources */,
 				7E814DA71710C6D9006242AA /* UIViewController+M6ParallaxController.m in Sources */,
 				7E814DA81710C6D9006242AA /* M6ParallaxController.m in Sources */,
 			);

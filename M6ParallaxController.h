@@ -11,20 +11,19 @@
 
 @class M6ParallaxController;
 
-@protocol M6ParallaxMasterViewControllerDelegate <NSObject>
-
-- (void)parallaxController:(M6ParallaxController *)parallaxController willChangeHeightOfViewController:(UIViewController *)viewController fromHeight:(CGFloat)oldHeight toHeight:(CGFloat)newHeight;
-
-@end
-
 @interface M6ParallaxController : UIViewController
 
-@property (nonatomic, weak) id<M6ParallaxMasterViewControllerDelegate> delegate;
+@property (nonatomic, assign, readonly) CGFloat topViewControllerStandartHeight;
 
-@property (nonatomic, assign, readonly) CGFloat parallaxedViewControllerStandartHeight;
+@property (nonatomic, strong, readonly) UIViewController * topViewController;
+@property (nonatomic, strong, readonly) UITableViewController * tableViewController;
 
-- (void)setupWithViewController:(UIViewController *)viewController height:(CGFloat)height tableViewController:(UITableViewController *)tableViewController;
+- (void)setupWithTopViewController:(UIViewController *)topViewController height:(CGFloat)height tableViewController:(UITableViewController *)tableViewController;
 
 - (void)tableViewControllerDidScroll:(UITableViewController *)tableViewController;
+
+// overwrite to provide custom functionality
+- (void)willChangeHeightOfTopViewControllerFromHeight:(CGFloat)oldHeight toHeight:(CGFloat)newHeight;
+
 
 @end
