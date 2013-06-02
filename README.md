@@ -60,7 +60,15 @@ Version 1.1
 ```
 
 - inside implement custom functionality (see sample)
- 
+
+##Tapping the top parallaxed controller
+- to handle interaction on the top parallaxed controller, you need to add a tap gesture recognizer as in the sample
+- to recognize tapping on a specific area, you will have to overwrite 
+``` objective-c
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+```
+and test for a specific area
+
 ##Table view sections
 - these are no longer supported, to provide a better scrolling experience (however you can enable sections support in M6ParallaxController.m by uncommenting lines, but not that scrolling will not be so smooth)
 
