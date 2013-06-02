@@ -3,6 +3,11 @@ M6ParallaxController
 
 Parallax controller for a parallaxed view and a table view
 
+Version 1.1
+- Perfect smooth scrolling, however table section headers are no longer fully supported
+- Updated samples, with code to handle clicking on the top parallaxed view
+- Changed handling of height change
+
 ##Usage (Without storyboards)
 
 - see sample
@@ -42,55 +47,22 @@ Parallax controller for a parallaxed view and a table view
     UIViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ParallaxedViewController"];
     UITableViewController * tvc = [self.storyboard instantiateViewControllerWithIdentifier:@"MyTableViewController"];
     
-    [self setupWithViewController:vc height:100 tableViewController:tvc];
+    [self setupWithTopViewController:vc height:100 tableViewController:tvc];
 }
 ```
 
-##Optional Usage
-- you can create a class for your parallaxed UIViewController and make it conform to the delegate method
+##Special effects
+- if you want to perform special action on resizing the parallaxed view (as in sample)
+- in your custom subclass of M6ParallaxController overwrite this method
 
 ``` objective-c
-@interface MyParallaxedViewController : UIViewController<M6ParallaxMasterViewControllerDelegate>
+- (void)willChangeHeightOfTopViewControllerFromHeight:(CGFloat)oldHeight toHeight:(CGFloat)newHeight;
 ```
 
-- and than in MyParallaxController, assign it as delegate
-
-``` objective-c
--(void) awakeFromNib
-{
-    MyParallaxedViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ParallaxedViewController"];
-    UITableViewController * tvc = [self.storyboard instantiateViewControllerWithIdentifier:@"MyTableViewController"];
-    
-    [self setupWithViewController:vc height:100 tableViewController:tvc];
-    
-    self.delegate = vc;
-}
-```
-
-- and do some custom stuff, like change the Alpha (as in the sample)
-
-``` objective-c
-- (void)parallaxController:(M6ParallaxController *)parallaxController willChangeHeightOfViewController:(UIViewController *)viewController fromHeight:(CGFloat)oldHeight toHeight:(CGFloat)newHeight {
-
-    if (newHeight >= parallaxController.parallaxedViewControllerStandartHeight) {
-    
-        [self.imageView setAlpha:1];
-        [self.label1 setAlpha:1];
-        [self.label2 setAlpha:1];
-        [self.label3 setAlpha:1];
-        
-    } else {
-    
-        float r = newHeight / parallaxController.parallaxedViewControllerStandartHeight;
-        [self.imageView setAlpha:r];
-        [self.label1 setAlpha:r];
-        [self.label2 setAlpha:r*r];
-        [self.label3 setAlpha:r*r*r*r];
-        
-    }
-
-}
-```
+- inside implement custom functionality (see sample)
+ 
+##Table view sections
+- these are no longer supported, to provide a better scrolling experience (however you can enable sections support in M6ParallaxController.m by uncommenting lines, but not that scrolling will not be so smooth)
 
 ##License
 Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
