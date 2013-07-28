@@ -23,15 +23,26 @@
 
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
-    UIViewController * topViewController = [MyTopViewController new];
-    UITableViewController * tableViewController = [MyTableViewController new];
-    
-    [self setupWithTopViewController:topViewController height:150 tableViewController:tableViewController];
-    
     UITapGestureRecognizer * tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
     tapGestureRecognizer.delegate = self;
     [self.view addGestureRecognizer:tapGestureRecognizer];
 
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        // setup
+        {
+            UIViewController * topViewController = [TopDesireViewController new];
+            UITableViewController * tableViewController = [DesiresListingViewController new];
+            
+            [self setupWithTopViewController:topViewController height:230.f tableViewController:tableViewController];
+            
+        }
+    });
+    
 }
 
 - (void)handleTapGesture:(id)sender {
