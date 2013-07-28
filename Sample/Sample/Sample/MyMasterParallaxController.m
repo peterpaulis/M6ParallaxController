@@ -31,6 +31,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     
+    [super viewDidAppear:animated];
+    
     static dispatch_once_t once;
     dispatch_once(&once, ^{
         // setup
@@ -44,6 +46,7 @@
     });
     
 }
+
 
 - (void)handleTapGesture:(id)sender {
     
