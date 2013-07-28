@@ -81,6 +81,8 @@ There may be an issue with using a navigation controller in that case use the fo
 ``` objective-c
 - (void)viewDidAppear:(BOOL)animated {
     
+    [super viewDidAppear:animated];
+    
     static dispatch_once_t once;
     dispatch_once(&once, ^{
         // setup
