@@ -78,7 +78,7 @@ Apache License 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 ##Issues
 There may be an issue with using a navigation controller in that case use the following code. The problem is, that the frame changes, and is not final in viewDidLoad
 
-`` objective-c
+``` objective-c
 - (void)viewDidAppear:(BOOL)animated {
     
     static dispatch_once_t dictPrec;
