@@ -81,8 +81,8 @@ There may be an issue with using a navigation controller in that case use the fo
 ``` objective-c
 - (void)viewDidAppear:(BOOL)animated {
     
-    static dispatch_once_t dictPrec;
-    dispatch_once(&dictPrec, ^{
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
         // setup
         {
             UIViewController * topViewController = [TopDesireViewController new];
