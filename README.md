@@ -69,6 +69,36 @@ Version 1.1
 ```
 and test for a specific area
 
+- see storyboard sample for implementation example
+
+#Tapping buttons in the top parallaxed controller
+
+- the key is to add a gesture recognizer and test on the different buttons, than send the action to the button, and handle the click as it would come from a user
+- see xib sample for implementationexample
+
+``` objective-c
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    
+    CGPoint tapPoint = [touch locationInView:self.view];;
+    
+    if (([self.topViewController.view hitTest:tapPoint withEvent:nil])) {
+    
+        MyTopViewController * mtvc = (MyTopViewController *)self.topViewController;
+        
+        // check for tap into button 1
+        tapPoint = [touch locationInView:mtvc.button1];
+        if ([mtvc.button1 hitTest:tapPoint withEvent:nil]) {
+            [mtvc.button1 sendActionsForControlEvents:UIControlEventTouchUpInside];
+            return YES;
+        }
+        
+        ...
+    }
+    
+    return NO;
+}
+```
+
 ##Table view sections
 - these are no longer supported, to provide a better scrolling experience (however you can enable sections support in M6ParallaxController.m by uncommenting lines, but not that scrolling will not be so smooth)
 
