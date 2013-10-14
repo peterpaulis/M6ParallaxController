@@ -76,4 +76,23 @@
 
 }
 
+////////////////////////////////////////////////////////////////////////
+#pragma mark - Interface
+////////////////////////////////////////////////////////////////////////
+
+- (IBAction)button1Pressed:(id)sender {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"BUTTON 1" message:@"You pressed button1" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alert show];
+}
+
+- (IBAction)button2Pressed:(id)sender {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"BUTTON 2" message:@"You pressed button2" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alert show];
+}
+
+- (IBAction)button3Pressed:(id)sender {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"BUTTON 3" message:@"You pressed button3" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alert show];
+}
+
 @end
