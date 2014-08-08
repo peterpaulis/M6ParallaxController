@@ -37,8 +37,8 @@
     dispatch_once(&once, ^{
         // setup
         {
-            UIViewController * topViewController = [TopDesireViewController new];
-            UITableViewController * tableViewController = [DesiresListingViewController new];
+            UIViewController * topViewController = [MyTopViewController new];
+            UITableViewController * tableViewController = [MyTableViewController new];
             
             [self setupWithTopViewController:topViewController height:230.f tableViewController:tableViewController];
             
