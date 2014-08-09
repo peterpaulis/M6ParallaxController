@@ -129,6 +129,6 @@ There may be an issue with using a navigation controller in that case use the fo
 ```
 
 ##Credits
-min:60 - Building perfect mobile apps, for affordable price - <a href="https://min60.com">https://min60.com</a>
+min:60 - Building perfect mobile apps, for affordable price - <a href="http://min60.com">http://min60.com</a>
 
 
