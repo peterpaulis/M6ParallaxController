@@ -1,3 +1,9 @@
+THIS IS DISCONTINUED, SEE THIS FOLLOWUP PROJECT
+====================
+
+M6UniversalParallaxViewController
+https://github.com/peterpaulis/M6UniversalParallaxViewController
+
 M6ParallaxController
 ====================
 
